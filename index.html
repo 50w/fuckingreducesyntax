@@ -137,7 +137,7 @@
         <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
     </div>
         <div>
-        <h2>find the <strong>sum of primitives</strong></h2>
+        <h2>find the <span class='expression'>sum of primitives</span></h2>
         <code>[<span class='inline-code'>"Hello"</span>, <span class='inline-code'>" "</span>, <span class='inline-code'>"world</span>, <span class='inline-code'>"!"</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // Hello world!</span><br/></code>
         <p class='disclaimer'>works on other primitives as well: </p>
         <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
@@ -147,7 +147,7 @@
         <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { x, y <span class='inline-code'>in</span> x <span class='pattern'>+</span> y }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
     </div>
     <div>
-        <h2>find the <strong>sum of properties</strong></h2>
+        <h2>find the <span class='expression'>sum of properties</span></h2>
         <code><span class='pattern'>struct</span> Person { <span class='pattern'>let</span> age: <span class='inline-code'>Int</span> }<br/>
         <span class='pattern'>let</span> people = [<span class='pattern'>Person</span>(age: <span class='inline-code'>1</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>2</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>3</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>4</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>5</span>)]</code>
         <code>people.<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { accumulator, person <span class='pattern'>in</span> accumulator <span class='pattern'>+</span> person.<span class='inline-code'>age</span> }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
@@ -162,7 +162,7 @@
         <code><span class='inline-code'>people</span>.<span class='pattern'>sum</span>(for: \.<span class='pattern'>age</span>)</span><span class='comment'> // 15</span></code>
     </div>
     <div>
-        <h2>find the <strong>element frequency</strong></h2>
+        <h2>find the <span class='expression'>element frequency</span></h2>
         <code><span class='inline-code'>"abracadabra"</span>.<span class='pattern'>reduce(</span>into: [:]<span class='pattern'>)</span> { counts, letter <span class='pattern'>in</span><br/>
           &emsp;&emsp;counts[letter, default: <span class='inline-code'>0</span>] <span class='pattern'>+=</span><span class='inline-code'> 1</span><br/>
         }<span class='comment'> // ["b": 2, "r": 2, "c": 1, "d": 1, "a": 5]</span></code>
@@ -174,7 +174,7 @@
         <br>
     </div> 
     <footer>
-        By <a href="http://twitter.com/schmidyy">Mat Schmid</a>, for <a href="http://50w.co/">wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.com</a>.
+        By <a href="http://twitter.com/schmidyy">Mat Schmid</a>, for <a href="http://50w.co/">50w</a>. Fucking Reduce Syntax...
     </footer>
 </body>
 </html>
