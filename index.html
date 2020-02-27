@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< Updated upstream
     <title>How Do I Write If Case Let in Swift?</title>
+=======
+    <title>How Do I Use Reduce in Swift?</title>
+>>>>>>> Stashed changes
     <style>
     body {
       background-color: #30303A;
@@ -114,21 +118,33 @@
     <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
     <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
     <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<<<<<<< Updated upstream
     <meta content="Pattern matching syntax" name="apple-mobile-web-app-title">
     <base target="_top">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9504319-6"></script>
+=======
+    <meta content="Reduce syntax" name="apple-mobile-web-app-title">
+    <base target="_top">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9504319-6"></script>
+>>>>>>> Stashed changes
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-9504319-6');
+<<<<<<< Updated upstream
     </script>
+=======
+    </script> -->
+>>>>>>> Stashed changes
 </head>
 <body>
     <style>
     #forkongithub a{background:#AA3333;color:#fff;text-decoration:none;font-family:Helvetica Neue,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.3);}}
+<<<<<<< Updated upstream
     </style><span id="forkongithub"><a href="https://github.com/zoejessica/fuckingifcaseletsyntax.com">Fork me on GitHub</a></span><br>
     <br>
     <h1>How Do I Write If Case Let in Swift?</h1>
@@ -203,6 +219,53 @@
     </div>
     <footer>
         By <a href="http://twitter.com/zoejessica">Zoe Smith</a>, with thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a>, and apologies to <a href="http://lazerwalker.com/">Mike Walker</a> who has a very bad memory for this sort of thing.
+=======
+    </style><span id="forkongithub"><a href="https://github.com/50w/fuckingreducesyntax">Fork me on GitHub</a></span><br>
+    <br>
+    <h1>How Do I Use Reduce in Swift?</h1>
+    <div>
+        <h2><strong>reduce</strong> returns the result of <span class='pattern'>combining the elements of a sequence</span> using the given <span class='expression'>closure</span>.</h2>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+    </div>
+        <div>
+        <h2>find the <strong>sum of primitives</strong></h2>
+        <code>[<span class='inline-code'>"Hello"</span>, <span class='inline-code'>" "</span>, <span class='inline-code'>"world</span>, <span class='inline-code'>"!"</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // Hello world!</span><br/></code>
+        <p class='disclaimer'>works on other primitives as well: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>which is equivalent and shorthand to: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { $0 <span class='pattern'>+</span> $1 }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>which is also equivalent and shorthand to: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { x, y <span class='inline-code'>in</span> x <span class='pattern'>+</span> y }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+    </div>
+    <div>
+        <h2>find the <strong>sum of properties</strong></h2>
+        <code><span class='pattern'>struct</span> Person { <span class='pattern'>let</span> age: <span class='inline-code'>Int</span> }<br/>
+        <span class='pattern'>let</span> people = [<span class='pattern'>Person</span>(age: <span class='inline-code'>1</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>2</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>3</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>4</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>5</span>)]</code>
+        <code>people.<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { accumulator, person <span class='pattern'>in</span> accumulator <span class='pattern'>+</span> person.<span class='inline-code'>age</span> }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>or generalized using Key Paths: (<a href='https://www.swiftbysundell.com/articles/reducers-in-swift/'>source</a>)</p>
+        <code><span class='pattern'>extension</span> Sequence {<br/>
+          &emsp;&emsp;<span class='pattern'>func</span> sum&lt;<span class='inline-code'>T</span>: <span class='inline-code'>Numeric</span>&gt;(for keyPath: <span class='inline-code'>KeyPath</span>&lt;<span class='inline-code'>Element</span>, <span class='pattern'>T</span>&gt;) -> <span class='pattern'>T</span> {<br/>
+            &emsp;&emsp;&emsp;&emsp;<span class='pattern'>return</span><span class='inline-code'> reduce</span>(<span class='inline-code'>0</span>) { sum, element <span class='pattern'>in</span><br/>
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;sum <span class='inline-code'>+</span> element[keyPath: keyPath]<br/>
+            &emsp;&emsp;&emsp;&emsp;}<br/>
+          &emsp;&emsp;}<br/>
+        }</code>
+        <code><span class='inline-code'>people</span>.<span class='pattern'>sum</span>(for: \.<span class='pattern'>age</span>)</span><span class='comment'> // 15</span></code>
+    </div>
+    <div>
+        <h2>find the <strong>element frequency</strong></h2>
+        <code><span class='inline-code'>"abracadabra"</span>.<span class='pattern'>reduce(</span>into: [:]<span class='pattern'>)</span> { counts, letter <span class='pattern'>in</span><br/>
+          &emsp;&emsp;counts[letter, default: <span class='inline-code'>0</span>] <span class='pattern'>+=</span><span class='inline-code'> 1</span><br/>
+        }<span class='comment'> // ["b": 2, "r": 2, "c": 1, "d": 1, "a": 5]</span></code>
+    </div>
+    <div>
+        <p>Other more in-depth articles:
+          <li><a href='https://www.swiftbysundell.com/articles/reducers-in-swift/'>Reducers in Swift - Swift by Sundell</a></li>
+        <br>
+    </div> 
+    <footer>
+        By <a href="http://twitter.com/schmidyy">Mat Schmid</a>, for <a href="http://50w.co/">50w</a>. Made for always needing to look up this documentation.
+>>>>>>> Stashed changes
     </footer>
 </body>
 </html>
