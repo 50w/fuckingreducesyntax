@@ -162,10 +162,12 @@
         <code><span class='inline-code'>people</span>.<span class='pattern'>sum</span>(for: \.<span class='pattern'>age</span>)</span><span class='comment'> // 15</span></code>
     </div>
     <div>
-        <h2>find the <span class='expression'>element frequency</span></h2>
+        <h2>find the <span class='expression'>frequency of elements</span></h2>
+        <p class='disclaimer'>example from the <a href='https://developer.apple.com/documentation/swift/array/3126956-reduce'>documentation</a>: </p>
         <code><span class='inline-code'>"abracadabra"</span>.<span class='pattern'>reduce(</span>into: [:]<span class='pattern'>)</span> { counts, letter <span class='pattern'>in</span><br/>
-          &emsp;&emsp;counts[letter, default: <span class='inline-code'>0</span>] <span class='pattern'>+=</span><span class='inline-code'> 1</span><br/>
-        }<span class='comment'> // ["b": 2, "r": 2, "c": 1, "d": 1, "a": 5]</span></code>
+          &emsp;&emsp;counts[letter, <span class='inline-code'>default</span>: <span class='inline-code'>0</span>] <span class='pattern'>+=</span><span class='inline-code'> 1</span><br/>
+        }<br/>
+        <span class='comment'> // ["b": 2, "r": 2, "c": 1, "d": 1, "a": 5]</span></code>
     </div>
     <div>
         <p>Other more in-depth articles:
