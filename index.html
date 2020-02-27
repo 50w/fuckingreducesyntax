@@ -1,18 +1,19 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>How Do I Declare A Block in Objective-C?</title>
-  <style>
+    <title>How Do I Use Reduce in Swift?</title>
+    <style>
     body {
-      background-color: #042029;
-      color: #83948F;
-      font-family: Lucida Grande, sans-serif;
+      background-color: #30303A;
+      color: #fff;
+      font-family: Helvetica Neue, sans-serif;
       font-size: 20px;
       padding: 40px;
       padding-bottom: 0;
     }
 
     strong {
-      color: #0088D9;
+      color: #B68DE0;
     }
 
     h1 {
@@ -25,25 +26,43 @@
       font-weight: normal;
     }
 
-    .return {
-      color: #00A69A;
+    .let {
+      color: #B68DE0;
     }
 
-    .name {
-      color: #BC8800;
+    .expression {
+      color: #F9DF4A;
     }
 
-    .parameter-types, .parameters {
-      color: #7C9F00;
+    .pattern {
+      color: #1FDDBA;
+    }
+    
+    .comment {
+	  color: #959292;
+    }
+
+    .disclaimer {
+      line-height: 2em;
+      padding-bottom: 2em;
+    }
+
+    div p.disclaimer {
+        padding-left: 2em;
     }
 
     code {
       display: block;
-      font-family: Monaco, Menlo;
+      font-family: Menlo, monaco, monospace;
       font-size: 20px;
       margin-bottom: 3em;
       margin-left: 40px;
       margin-top: 1.5em;
+    }
+
+    .inline-code {
+        font-family: Menlo, monaco, monospace;
+        color: #B68DE0;
     }
 
     footer {
@@ -53,14 +72,13 @@
       text-align: right;
     }
 
-    footer a {
-      color: #0088D9;
+    a {
+      color: #B68DE0;
       text-decoration: none;
     }
 
-  </style>
-
-  <style media='print'>
+    </style>
+    <style media='print'>
     body {
       background-color: #FFFFFF;
       font-size: 16px;
@@ -82,59 +100,80 @@
       font-size: 10px;
       margin-top: 40px;
     }
-  </style>
-</head>
-
-<body>
-  <h1>How Do I Declare A Block in Objective-C?</h1>
-
-  <div>
-    <h2>As a <strong>local variable</strong>:</h2>
-    <code>
-      <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>) = ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>property</strong>:</h2>
-    <code>
-      @property (nonatomic, copy) <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>);
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>method parameter</strong>:</h2>
-    <code>
-      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span>;
-    </code>
-  </div>
-
-  <div>
-    <h2>As an <strong>argument to a method call</strong>:</h2>
-    <code>
-      [someObject someMethodThatTakesABlock: ^<span class='return'>returnType</span> (<span class='parameters'>parameters</span>) {...}];
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>typedef</strong>:</h2>
-    <code>
-      typedef <span class='return'>returnType</span> (^<span class='name'>TypeName</span>)(<span class='parameter-types'>parameterTypes</span>);<br/>
-      <span class='name'>TypeName</span> blockName = ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
-    </code>
-  </div>
-
-  <footer>By <a href="http://lazerwalker.com">Mike Walker</a>, who has a very bad memory for this sort of thing.</footer>
-
+    </style>
+    <link href="apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
+    <link href="favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+    <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <meta content="Reduce syntax" name="apple-mobile-web-app-title">
+    <base target="_top">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9504319-6"></script>
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  ga('create', 'UA-43658906-1', 'fuckingblocksyntax.com');
-  ga('send', 'pageview');
-
-</script>
+      gtag('config', 'UA-9504319-6');
+    </script> -->
+</head>
+<body>
+    <style>
+    #forkongithub a{background:#AA3333;color:#fff;text-decoration:none;font-family:Helvetica Neue,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.3);}}
+    </style><span id="forkongithub"><a href="https://github.com/50w/fuckingreducesyntax">Fork me on GitHub</a></span><br>
+    <br>
+    <h1>How Do I Use Reduce in Swift?</h1>
+    <div>
+        <h2><strong>reduce</strong> returns the result of <span class='pattern'>combining the elements of a sequence</span> using the given <span class='expression'>closure</span>.</h2>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+    </div>
+        <div>
+        <h2>find the <strong>sum of primitives</strong></h2>
+        <code>[<span class='inline-code'>"Hello"</span>, <span class='inline-code'>" "</span>, <span class='inline-code'>"world</span>, <span class='inline-code'>"!"</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // Hello world!</span><br/></code>
+        <p class='disclaimer'>works on other primitives as well: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, <span class='pattern'>+</span><span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>which is equivalent and shorthand to: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { $0 <span class='pattern'>+</span> $1 }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>which is also equivalent and shorthand to: </p>
+        <code>[<span class='inline-code'>1</span>, <span class='inline-code'>2</span>, <span class='inline-code'>3</span>, <span class='inline-code'>4</span>, <span class='inline-code'>5</span></span>].<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { x, y <span class='inline-code'>in</span> x <span class='pattern'>+</span> y }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+    </div>
+    <div>
+        <h2>find the <strong>sum of properties</strong></h2>
+        <code><span class='pattern'>struct</span> Person { <span class='pattern'>let</span> age: <span class='inline-code'>Int</span> }<br/>
+        <span class='pattern'>let</span> people = [<span class='pattern'>Person</span>(age: <span class='inline-code'>1</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>2</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>3</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>4</span>), <span class='pattern'>Person</span>(age: <span class='inline-code'>5</span>)]</code>
+        <code>people.<span class='pattern'>reduce(</span><span class='inline-code'>0</span>, { accumulator, person <span class='pattern'>in</span> accumulator <span class='pattern'>+</span> person.<span class='inline-code'>age</span> }<span class='pattern'>)</span><span class='comment'> // 15</span><br/></code>
+        <p class='disclaimer'>or generalized using Key Paths: (<a href='https://www.swiftbysundell.com/articles/reducers-in-swift/'>source</a>)</p>
+        <code><span class='pattern'>extension</span> Sequence {<br/>
+          &emsp;&emsp;<span class='pattern'>func</span> sum&lt;<span class='inline-code'>T</span>: <span class='inline-code'>Numeric</span>&gt;(for keyPath: <span class='inline-code'>KeyPath</span>&lt;<span class='inline-code'>Element</span>, <span class='pattern'>T</span>&gt;) -> <span class='pattern'>T</span> {<br/>
+            &emsp;&emsp;&emsp;&emsp;<span class='pattern'>return</span><span class='inline-code'> reduce</span>(<span class='inline-code'>0</span>) { sum, element <span class='pattern'>in</span><br/>
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;sum <span class='inline-code'>+</span> element[keyPath: keyPath]<br/>
+            &emsp;&emsp;&emsp;&emsp;}<br/>
+          &emsp;&emsp;}<br/>
+        }</code>
+        <code><span class='inline-code'>people</span>.<span class='pattern'>sum</span>(for: \.<span class='pattern'>age</span>)</span><span class='comment'> // 15</span></code>
+    </div>
+    <div>
+        <h2>find the <strong>element frequency</strong></h2>
+        <code><span class='inline-code'>"abracadabra"</span>.<span class='pattern'>reduce(</span>into: [:]<span class='pattern'>)</span> { counts, letter <span class='pattern'>in</span><br/>
+          &emsp;&emsp;counts[letter, default: <span class='inline-code'>0</span>] <span class='pattern'>+=</span><span class='inline-code'> 1</span><br/>
+        }<span class='comment'> // ["b": 2, "r": 2, "c": 1, "d": 1, "a": 5]</span></code>
+    </div>
+    <div>
+        <p>Other more in-depth articles:
+          <li><a href='https://www.swiftbysundell.com/articles/reducers-in-swift/'>Reducers in Swift - Swift by Sundell</a></li>
+        <br>
+    </div> 
+    <footer>
+        By <a href="http://twitter.com/schmidyy">Mat Schmid</a>, for <a href="http://50w.co/">50w</a>. Made for always needing to look up this documentation.
+    </footer>
 </body>
 </html>

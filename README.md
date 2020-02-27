@@ -1,6 +1,6 @@
-Fucking Block Syntax
+Fucking Reduce Syntax
 =================
 
 Because syntax is hard.
 
-http://fuckingblocksyntax.com
+http://fuckingreducesyntax.50w.co
